@@ -29,6 +29,6 @@ class ProfileController extends Controller
         Auth::guard('web')->logout();
         $request->session()->flush();
         $request->session()->regenerate();
-        return redirect(env('PREFIX'). 'www.'. env('DOMAIN').'/');
+        return redirect(env('PREFIX'). env('DOMAIN').'/');
     }
 }
