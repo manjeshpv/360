@@ -7,30 +7,39 @@
                 <div class="col-sm-5 col-md-6">
                     <div class="topbar-left">
                         <div class="welcome-text">
-                            We help the world growing since 1983
+                            {{--We help the world growing since 1983--}}
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-7 col-md-6">
                     <div class="topbar-right">
                         <ul class="topbar-menu">
-                            <li><a href="career.html" title="Career">Career</a></li>
-                            <li><a href="contact-feedback.html" title="Give Feedback">Give Feedback</a></li>
-                            <li><a href="Contact.html" title="Contact Us">Contact Us</a></li>
+                            @if(Auth::guard('web')->check())
+                                <li><a href="{{route('profile.index')}}" title="Dashboard">Dashboard</a></li>
+                                <li><a href="{{route('auth.logout')}}" title="Logout">Logout</a></li>
+                            @else
+                                <li><a href="{{route('auth.login')}}" title="Login">Login</a></li>
+
+                            @endif
+                            {{--<li><a href="career.html" title="Career">Career</a></li>--}}
+
+                            {{--<li><a href="career.html" title="Career">Career</a></li>--}}
+                            {{--<li><a href="contact-feedback.html" title="Give Feedback">Give Feedback</a></li>--}}
+                            {{--<li><a href="Contact.html" title="Contact Us">Contact Us</a></li>--}}
                         </ul>
                         <ul class="topbar-sosmed">
                             <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="https://github.com/ssit360/360" target="_blank'"><i class="fa fa-github"></i></a>
                             </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </li>
+                            {{--<li>--}}
+                                {{--<a href="#"><i class="fa fa-twitter"></i></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="#"><i class="fa fa-instagram"></i></a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="#"><i class="fa fa-pinterest"></i></a>--}}
+                            {{--</li>--}}
                         </ul>
                     </div>
                 </div>
@@ -44,28 +53,32 @@
 
 
             <div class="contact-info">
-                <!-- INFO 1 -->
-                <div class="box-icon-1">
-                    <div class="icon">
-                        <div class="fa fa-envelope-o"></div>
+                @if(Auth::guard('web')->check())
+                    <!-- INFO 1 -->
+                    <div class="box-icon-1">
+                        <div class="icon">
+                            <div class="fa fa-envelope-o"></div>
+                        </div>
+                        <div class="body-content">
+                            <div class="heading">Email Support</div>
+                            <a href="mailto:wifi@ssit.edu.in">wifi@ssit.edu.in</a>
+                        </div>
                     </div>
-                    <div class="body-content">
-                        <div class="heading">Email Support</div>
-                        info@petro.com
-                    </div>
-                </div>
-                <!-- INFO 2 -->
-                <div class="box-icon-1">
-                    <div class="icon">
-                        <div class="fa fa-phone"></div>
-                    </div>
-                    <div class="body-content">
-                        <div class="heading">Call Support</div>
-                        +62 123 6700 411
-                    </div>
-                </div>
-                <!-- INFO 3 -->
-                <a href="contact-2.html" title="" class="btn btn-cta pull-right">GET A QUOTE</a>
+                    <!-- INFO 2 -->
+                    {{--<div class="box-icon-1">--}}
+                        {{--<div class="icon">--}}
+                            {{--<div class="fa fa-phone"></div>--}}
+                        {{--</div>--}}
+                        {{--<div class="body-content">--}}
+                            {{--<div class="heading">Call Support</div>--}}
+                            {{--+62 123 6700 411--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    <!-- INFO 3 -->
+                @else
+                    <a href="{{route('auth.login')}}" title="" class="btn btn-cta pull-right">Login</a>
+                @endif
+
 
             </div>
         </div>
@@ -86,8 +99,8 @@
 
                 </div>
 
-                <a class="navbar-brand" href="index-2.html">
-                    <img src="images/logo.png" alt="" />
+                <a class="navbar-brand" href="{{route('index')}}">
+                    <img src="http://ssit.edu.in/wp-content/uploads/2017/05/ssit-banner.png" alt="" style="height:80px"/>
                 </a>
 
                 <nav class="navbar-collapse collapse">
@@ -95,58 +108,57 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HOME <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="index-2.html">HOMEPAGE 1</a></li>
-                                <li><a href="index-3.html">HOMEPAGE 2</a></li>
+                                <li><a href="{{route('index')}}">home</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT US <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="about-company.html">OUR COMPANY</a></li>
-                                <li><a href="about-history.html">COMPANY HISTORY</a></li>
-                                <li><a href="about-team.html">OUR TEAM</a></li>
-                                <li><a href="about-partners.html">OUR PARTNERS</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SERVICES <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="services.html">SERVICES 1</a></li>
-                                <li><a href="services-2.html">SERVICES 2</a></li>
-                                <li><a href="services-detail.html">SERVICES DETAIL</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PAGES <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="pricing-table.html">PRICING TABLE</a></li>
-                                <li><a href="404page.html">404 PAGE</a></li>
-                                <li><a href="career.html">CAREER</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PROJECTS <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="project-grid.html">GRID LAYOUT</a></li>
-                                <li><a href="project-detail.html">SINGLE PROJECT</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="news-grid.html">GRID BAR</a></li>
-                                <li><a href="news-sidebar.html">SIDEBAR</a></li>
-                                <li><a href="news-detail.html">SINGLE NEWS</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CONTACT <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="contact-2.html">CONTACT US</a></li>
-                                <li><a href="contact-quote.html">GET A QUOTE</a></li>
-                            </ul>
-                        </li>
+                        {{--<li class="dropdown">--}}
+                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT US <span class="caret"></span></a>--}}
+                            {{--<ul class="dropdown-menu">--}}
+                                {{--<li><a href="about-company.html">OUR COMPANY</a></li>--}}
+                                {{--<li><a href="about-history.html">COMPANY HISTORY</a></li>--}}
+                                {{--<li><a href="about-team.html">OUR TEAM</a></li>--}}
+                                {{--<li><a href="about-partners.html">OUR PARTNERS</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+                        {{--<li class="dropdown">--}}
+                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SERVICES <span class="caret"></span></a>--}}
+                            {{--<ul class="dropdown-menu">--}}
+                                {{--<li><a href="services.html">SERVICES 1</a></li>--}}
+                                {{--<li><a href="services-2.html">SERVICES 2</a></li>--}}
+                                {{--<li><a href="services-detail.html">SERVICES DETAIL</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+                        {{--<li class="dropdown">--}}
+                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PAGES <span class="caret"></span></a>--}}
+                            {{--<ul class="dropdown-menu">--}}
+                                {{--<li><a href="faq.html">FAQ</a></li>--}}
+                                {{--<li><a href="pricing-table.html">PRICING TABLE</a></li>--}}
+                                {{--<li><a href="404page.html">404 PAGE</a></li>--}}
+                                {{--<li><a href="career.html">CAREER</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+                        {{--<li class="dropdown">--}}
+                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PROJECTS <span class="caret"></span></a>--}}
+                            {{--<ul class="dropdown-menu">--}}
+                                {{--<li><a href="project-grid.html">GRID LAYOUT</a></li>--}}
+                                {{--<li><a href="project-detail.html">SINGLE PROJECT</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+                        {{--<li class="dropdown">--}}
+                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS <span class="caret"></span></a>--}}
+                            {{--<ul class="dropdown-menu">--}}
+                                {{--<li><a href="news-grid.html">GRID BAR</a></li>--}}
+                                {{--<li><a href="news-sidebar.html">SIDEBAR</a></li>--}}
+                                {{--<li><a href="news-detail.html">SINGLE NEWS</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+                        {{--<li class="dropdown">--}}
+                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CONTACT <span class="caret"></span></a>--}}
+                            {{--<ul class="dropdown-menu">--}}
+                                {{--<li><a href="contact-2.html">CONTACT US</a></li>--}}
+                                {{--<li><a href="contact-quote.html">GET A QUOTE</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
 
                     </ul>
 

@@ -1,3 +1,91 @@
+
+/*========= Login ==========*/
+header.login .navbar-default{
+  background: #041532;
+}
+header.login .navbar-brand{
+  height: auto;
+  padding: 25px;
+}
+header.login .goback{
+  padding-top: 45px;
+  padding-right: 45px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 300;
+}
+section.login{
+  padding: 65px 0;
+  background-size: cover;
+}
+.login-blox{
+  background: #fff;
+  padding: 30px 40px 80px 85px;
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+.login-blox h3{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #d78419;
+  margin-bottom: 20px;
+}
+.login-social{
+  display: inline-block;
+  width: auto;
+  margin: auto;
+  margin-bottom: 35px;
+}
+.login-social a{
+  padding: 12px;
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  line-height: 0;
+  vertical-align: top;
+  width: 160px;
+}
+.login-social span{
+  margin: 0 15px;
+  position: relative;
+  top: -4px;
+}
+.login-social a i{
+  font-size: 22px;
+}
+.login-social a.facebook{
+  background: #5275b1;
+  margin-right: -2px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.login-social a.google{
+  background: #cf5649;
+  margin-left: -2px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius:5px;
+}
+.login-form label{
+  font-weight: 300;
+}
+.login-form .form-control{
+  font-weight: 300;
+  font-style: italic;
+}
+span.label{
+  color: #000;
+  font-size: 12px;
+  font-weight: 300;
+  white-space: normal;
+}
+span.label small{
+  display: block;
+  padding: 0 5px;
+  color: #868686;
+}
 /*
 Template Name: Petro - Industrial HTML Template
 Template URI: rudhisasmito.com/demo/petro
