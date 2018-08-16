@@ -17,6 +17,10 @@
                 <td>{{$user->usn}}</td>
             </tr>
             <tr>
+                <td>Username</td>
+                <td>{{$user->wifi_username}}</td>
+            </tr>
+            <tr>
                 <td>Wifi Password</td>
                 <td>{{$user->wifi_password}}</td>
             </tr>
@@ -27,6 +31,10 @@
             <tr>
                 <td>Department</td>
                 <td>{{$user->department_id}}</td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td>{{$user->mobile}}</td>
             </tr>
             </tbody>
         </table>

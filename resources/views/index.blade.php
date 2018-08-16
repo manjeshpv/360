@@ -1,6 +1,12 @@
 @extends('layout')
 
 @section('content')
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <a href="{{route('profile.index')}}" class="btn btn-success">Check Dashboard for More details</a>
+    </div>
 
     <!-- BANNER -->
     {{--<div id="slides" class="section banner">--}}
